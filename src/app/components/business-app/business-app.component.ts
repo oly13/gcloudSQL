@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { AuthService } from 'src/app/services/auth.service';
 
 @Component({
   selector: 'app-business-app',
@@ -7,9 +8,16 @@ import { Component, OnInit } from '@angular/core';
 })
 export class BusinessAppComponent implements OnInit {
 
-  constructor() { }
+  constructor(
+    private authService: AuthService
+  ) { }
+
+  public logout() {
+    this.authService.logout();
+  }
 
   ngOnInit(): void {
+    this.authService.checkLogin();
   }
 
 }

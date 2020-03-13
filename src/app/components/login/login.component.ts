@@ -10,6 +10,8 @@ export class LoginComponent implements OnInit {
 
   public email: string;
   public password: string;
+  public emaillogin: string;
+  public passwordlogin: string;
   public role: string;
 
   constructor(
@@ -17,11 +19,14 @@ export class LoginComponent implements OnInit {
   ) { }
 
   public login() {
-    this.loginService.login(this.email, this.password);
+    this.loginService.login(this.emaillogin, this.passwordlogin);
   }
-  public register() {}
+  public register() {
+    this.loginService.register(this.email, this.password, this.role);
+  }
 
   ngOnInit(): void {
+    this.loginService.checkLogin();
   }
 
 }

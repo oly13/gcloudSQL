@@ -8,6 +8,8 @@ import { BusinessAppComponent } from './components/business-app/business-app.com
 import { LoginComponent } from './components/login/login.component';
 
 import { AngularFireModule } from '@angular/fire';
+import { AngularFireAuthModule } from '@angular/fire/auth';
+import { AngularFirestoreModule } from '@angular/fire/firestore';
 import { environment } from './../environments/environment';
 
 @NgModule({
@@ -19,11 +21,13 @@ import { environment } from './../environments/environment';
   imports: [
     BrowserModule,
     AppRoutingModule,
-    AngularFireModule,
     AngularFireModule.initializeApp(environment.firebaseConfig),
+    AngularFireAuthModule,
+    AngularFirestoreModule,
     FormsModule
   ],
-  providers: [],
+  providers: [
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
