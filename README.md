@@ -4,3 +4,4 @@
 * entrar en la carpeta del proyecto y hacer `npm install`
 * `sudo ng serve`
 * ir a http://locahost:4200
+* IMPORTRANTE: cambiar el `environment.ts` firebaseConfig a las de vuestro proyecto de grupo
