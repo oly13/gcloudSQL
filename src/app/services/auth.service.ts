@@ -34,11 +34,7 @@ export class AuthService {
 
   public checkLogin() {
     this.fireAuth.authState.subscribe(authState => {
-      if (authState) {
-        this.router.navigate(['sqlapp']);
-      } else {
-        this.router.navigate(['login']);
-      }
+      authState ? this.router.navigate(['sqlapp']) : this.router.navigate(['login']);
     });
   }
 
